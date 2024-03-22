@@ -32,11 +32,13 @@ int main(int argc, char *argv[])
      // *******  Create the Player ********
 
     QPixmap playerpix(":/icons/resources/player.png");
-    playerpix=playerpix.scaledToWidth(100) ;
-    playerpix=playerpix.scaledToHeight(100) ;
+    playerpix=playerpix.scaledToWidth(50) ;
+    playerpix=playerpix.scaledToHeight(70) ;
     Player *  player = new Player() ;
     player->setPixmap(playerpix) ;
     player->setPos(10,450) ;
+
+
 
 
 

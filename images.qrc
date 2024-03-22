@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/icons">
         <file>resources/player.png</file>
-        <file>../BigChicken.webp</file>
         <file>resources/BigChicken.webp</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/download.jpeg</file>
     </qresource>
 </RCC>
