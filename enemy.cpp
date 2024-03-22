@@ -8,7 +8,9 @@
 
 Enemy::Enemy() {
     // *******  Setting the size of the enemy ********
-    setRect(0,0,100,100);
+    QPixmap enemy(":/icons/resources/BigChicken.webp");
+    setPixmap(enemy.scaledToWidth(50)) ;
+
 
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 700;
@@ -24,7 +26,7 @@ Enemy::Enemy() {
 void Enemy:: move()
 {
     setPos(x(),y()+5);
-    if(y()+rect().height()>800)
+    if(y()+pixmap().height()>800)
     {
         scene()->removeItem(this);
         delete this;

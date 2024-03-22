@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     bullet.cpp \
-    dialog.cpp \
     enemy.cpp \
     gameover.cpp \
     main.cpp \
@@ -18,7 +17,6 @@ SOURCES += \
 
 HEADERS += \
     bullet.h \
-    dialog.h \
     enemy.h \
     gameover.h \
     player.h
@@ -29,8 +27,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 FORMS += \
-    dialog.ui \
     gameover.ui
 
 RESOURCES += \
     images.qrc
+
+DISTFILES +=
