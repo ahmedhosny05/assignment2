@@ -28,3 +28,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 FORMS += \
     gameover.ui
+
+RESOURCES += \
+    images.qrc
