@@ -8,6 +8,8 @@ class Player: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Player();
+    void decrease () ;
+    void increase() ;
 public:
     void keyPressEvent(QKeyEvent * event);
 
