@@ -8,9 +8,9 @@
 
 Enemy::Enemy() {
     // *******  Setting the size of the enemy ********
-    QPixmap enemy(":/resources/download.jpeg");
+    QPixmap enemy(":/icons/resources/chickenr.png");
     setPixmap(enemy.scaledToWidth(80)) ;
-    setPixmap(QPixmap(":/resources/download.jpeg").scaled(60, 80));
+    setPixmap(QPixmap(":/icons/resources/chickenr.png").scaled(60, 80));
 
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 700;

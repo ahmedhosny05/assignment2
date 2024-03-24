@@ -2,6 +2,8 @@
     <qresource prefix="/icons">
         <file>resources/player.png</file>
         <file>resources/BigChicken.webp</file>
+        <file>resources/spaceship.png</file>
+        <file>resources/chickenr.png</file>
     </qresource>
     <qresource prefix="/">
         <file>resources/download.jpeg</file>

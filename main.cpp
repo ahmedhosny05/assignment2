@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
 
      // *******  Create the Player ********
 
-    QPixmap playerpix(":/icons/resources/player.png");
-    playerpix=playerpix.scaledToWidth(40) ;
+    QPixmap playerpix(":/icons/resources/spaceship.png");
+    playerpix=playerpix.scaledToWidth(50) ;
     playerpix=playerpix.scaledToHeight(60) ;
     Player *  player = new Player() ;
     player->setPixmap(playerpix) ;
