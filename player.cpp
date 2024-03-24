@@ -4,9 +4,12 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include "enemy.h"
-Player::Player() {
-
-}
+#include <QMessageBox>
+#include <QGraphicsTextItem>
+Player::Player(  )
+{
+     ;
+ }
 
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -42,4 +45,17 @@ void Player::createEnemy()
 }
 
 
+void Player::increase() {
+    score++; // Assuming score is a member variable of Player class
+    QGraphicsTextItem *scoreText = new QGraphicsTextItem();
+    scoreText->setPlainText(QString("Score: ") + QString::number(score));
+    scoreText->setDefaultTextColor(Qt::blue);
+    // Add scoreText to scene if needed
+}
 
+void Player::decrease() {
+    health--; // Assuming health is a member variable of Player class
+    QGraphicsTextItem *healthText = new QGraphicsTextItem();
+    healthText->setPlainText(QString("Health: ") + QString::number(health));
+    healthText->setDefaultTextColor(Qt::red);
+}
