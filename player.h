@@ -17,13 +17,11 @@ public:
 
 public slots:
     void createEnemy();
-    void increase () ;
-    void decrease() ;
 
 
-private :
-    int score =0 ;
-    int health = 3 ;
+
+
+
 
 };
 

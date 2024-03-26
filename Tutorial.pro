@@ -12,14 +12,18 @@ SOURCES += \
     bullet.cpp \
     enemy.cpp \
     gameover.cpp \
+    health.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    score.cpp
 
 HEADERS += \
     bullet.h \
     enemy.h \
     gameover.h \
-    player.h
+    health.h \
+    player.h \
+    score.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

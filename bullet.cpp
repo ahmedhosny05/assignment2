@@ -4,6 +4,9 @@
 #include <QList>
 #include <enemy.h>
 #include <player.h>
+#include"score.h"
+
+extern Score * score ;
 Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
         // *******  Setting the bullets' size ********
@@ -27,8 +30,10 @@ void Bullet:: move()
     QList<QGraphicsItem*> collided_items=collidingItems() ;
     for(int i = 0 ; i<collided_items.size();i++)
     {
+
         if(typeid(*(collided_items[i]))==typeid(Enemy))
         {
+            score->increase() ;
             scene()->removeItem(collided_items[i]);
             scene()-> removeItem(this);
             delete this ;

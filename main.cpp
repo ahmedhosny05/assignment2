@@ -8,6 +8,12 @@
 #include <QDebug>
 #include <QBrush>
 #include <QGraphicsPixmapItem>
+#include "score.h"
+#include "health.h"
+
+Score * score ;
+
+Health * health ;
 
 int main(int argc, char *argv[])
 {
@@ -57,6 +63,16 @@ player->setPos(view->width() / 2 , view->height() - playerpix.height());
    // *******   Assign scene to the view   ***************
 
       view->setScene(scene);
+
+      //create score
+
+      score = new Score() ;
+      scene->addItem(score);
+
+      health = new Health() ;
+      health->setPos(health->x() , health->y()+25) ;
+      scene->addItem(health);
+
 
 
     // *******  Create the Enemies automatically ********

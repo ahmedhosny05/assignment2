@@ -1,25 +1,17 @@
 #ifndef HEALTH_H
 #define HEALTH_H
 
-#include <QObject>
+#include<QGraphicsTextItem>
 
-class Health : public QObject
+class Health : public QGraphicsTextItem
 {
-    Q_OBJECT
+public :
+    Health(QGraphicsItem * parent =0) ;
+    void decrease() ;
+    int gethealth() ;
 
-public:
-    explicit Health(QObject *parent = nullptr);
-    ~Health();
-
-    void decrease();
-    int getHealth() ;
-    bool isGameOver() ;
-
-signals:
-    void gameOver(int finalScore);
-
-private:
-    int health;
+private :
+    int health ;
 };
 
 #endif // HEALTH_H

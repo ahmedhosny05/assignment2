@@ -10,6 +10,7 @@ public:
 
 public slots:
     void move();
+
 };
 
 #endif // ENEMY_H

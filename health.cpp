@@ -1,43 +1,21 @@
 #include "health.h"
-#include "ui_health.h"
+#include <QFont>
 
-Health::Health(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::Health)
-{
-    ui->setupUi(this);
+Health::Health(QGraphicsItem *parent): QGraphicsTextItem(parent){
+    // initialize the score to 0
+    health = 3;
 
-    // Initialize health value
-    healthValue = 100; // Example initial health value, adjust as needed
-
-    // Update the displayed health value
-    updateHealthLabel();
+    // draw the text
+    setPlainText(QString("Health: ") + QString::number(health)); // Health: 3
+    setDefaultTextColor(Qt::red);
+    setFont(QFont("times",16));
 }
 
-Health::~Health()
-{
-    delete ui;
+void Health::decrease(){
+    health--;
+    setPlainText(QString("Health: ") + QString::number(health)); // Health: 2
 }
 
-void Health::decreaseHealth(int amount)
-{
-    // Decrease health by the specified amount
-    healthValue -= amount;
-
-    // Ensure health doesn't go below 0
-    healthValue = qMax(healthValue, 0);
-
-    // Update the displayed health value
-    updateHealthLabel();
-}
-
-int Health::getHealth()
-{
-    return healthValue;
-}
-
-void Health::updateHealthLabel()
-{
-    // Update the displayed health value in the UI
-    ui->healthLabel->setText(QString("Health: %1").arg(healthValue));
+int Health::gethealth(){
+    return health;
 }
