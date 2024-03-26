@@ -10,10 +10,7 @@ class Player: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Player();
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/main
 public:
     void keyPressEvent(QKeyEvent * event);
 
