@@ -57,22 +57,24 @@ void Enemy:: move()
         if (typeid(*(collided_items[i])) == typeid(Player)) {
             // Remove the player and the enemy
             scene()->removeItem(collided_items[i]);
-
-
             scene()->removeItem(this);
 
 
             delete collided_items[i];
-            delete this;
+            QTimer::singleShot(0, this, [=]() {
+                delete this;
+            });
 
             // Display the game over UI
-            gameover* game = new gameover();
+            gameover *game = new gameover();
             game->show();
 
             // Return from the function after displaying game over UI
             return;
         }
+
+        }
     }
 }
-}
+
 
