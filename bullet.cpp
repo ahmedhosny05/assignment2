@@ -6,6 +6,7 @@
 #include <player.h>
 #include"score.h"
 
+
 extern Score * score ;
 Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
@@ -17,7 +18,7 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
         // *******  Generating the Bullets automatically ********
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
-    timer->start(50);
+    timer->start(20);
 }
 
 // Move function is used to 1-  move the bullet upwards

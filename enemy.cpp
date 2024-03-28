@@ -6,10 +6,13 @@
 #include"player.h"
 #include "gameover.h"
 #include"health.h"
-
+#include "score.h"
+#include "QMessageBox"
+#include"QString"
 
 
 extern Health * health ;
+extern Score *score;
 Enemy::Enemy() {
     // *******  Setting the size of the enemy ********
     QPixmap enemy(":/icons/resources/chickenr.png");
@@ -40,8 +43,14 @@ void Enemy:: move()
 
         scene()->removeItem(this);
         delete this;
-    }
 
+         if (health->gethealth() <= 0) {
+            QString message = "Game Over! Your final score is: " + QString::number(score->getscore());
+        QMessageBox *msgBox = new QMessageBox();
+        msgBox->setText(message);
+        msgBox->setWindowTitle("Game Over");
+        msgBox->exec();
+         }
 
     QList<QGraphicsItem*> collided_items = collidingItems();
     for (int i = 0; i < collided_items.size(); i++) {
@@ -64,5 +73,6 @@ void Enemy:: move()
             return;
         }
     }
+}
 }
 
